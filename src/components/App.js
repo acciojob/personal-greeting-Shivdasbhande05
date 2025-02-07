@@ -1,22 +1,25 @@
 
 import React from "react";
+import { useState } from "react";
 import './../styles/App.css';
 
 const App = () => {
+  const [input,setInput] = useState('');
+  const onInput = (e) => {
+    const {value} = e.target
+    setInput(value)
+  }
+
+  const onClear = () => {
+    setInput('')
+  }
   return (
     <div>
         {/* Do not remove the main div */ }
-        <h2>Enter Your Name :-</h2>
-        <input type="text" id="text"/>
-        {
-          const inputText = document.getElementById("text");
-
-          (inputText !== "")
-          ?
-          <p>{`Hello ${inputText}`}</p>
-          :
-          <p>{`Hello User !`}</p>
-        }
+        <p>Enter your name:</p>
+        <input value={input} onChange={onInput}/>
+        {input.length > 0 ? <p>Hello {input}</p> : null}
+        <button onClick={onClear}>Clear</button>
     </div>
   )
 }
