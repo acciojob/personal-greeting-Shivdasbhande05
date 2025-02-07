@@ -18,7 +18,7 @@ const App = () => {
         {/* Do not remove the main div */ }
         <p>Enter your name:</p>
         <input value={input} onChange={onInput}/>
-        {input.length > 0 ? <p>Hello {input}</p> : null}
+        {input.length > 0 ? <p>Hello {input}!</p> : null}
         <button onClick={onClear}>Clear</button>
     </div>
   )
